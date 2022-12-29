@@ -1,0 +1,382 @@
+/* basis */
+
+
+/* pseudo elementos */
+
+:root {
+    --fuenteParrafos: 'Bebas Neue', cursive;
+    --fuenteHeading: 'Monoton', cursive;
+    --primario: #9C6AC6;
+    --secundario: #6fafa3;
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --gris:#9b9b9b;
+
+    --grisclaro:#f0f0f0;
+}
+
+
+/* importante */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+}
+
+
+/* CSS globales */
+
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--blanco);
+    line-height: 1.2;
+    font-weight: normal;
+
+}
+
+h1 {
+    font-size: 4.8rem;
+    font-family: var(--fuenteHeading);
+}
+
+h2 {
+    font-family: var(--blanco);
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 4rem;
+
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+
+/** Utilidades ----> nos permitiran hacer cosas bien chidas**/
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+
+/* Ahora si----> el header */
+
+
+.webp .header{
+
+    background-image: url(../img/bannerjapan.webp);
+}
+.no-webp .header{
+    background-image: url(../img/bannerjapan.jpg);
+}
+.header {
+
+    /* opara que la imagen no se qude volando que tome todo lo que pueda */
+    height: 60rem;
+    background-size: cover;
+    /* hay que darle tamaño para que se muestre */
+    
+    background-repeat: no-repeat;
+    /* aa medida que nosotros hagamos zoomeste de centrara */
+    background-position: center center;
+
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 3rem;
+
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem;
+    }
+}
+
+.barra {
+    padding: 2rem;  
+}
+
+
+@media (min-width:768px) {
+    .barra {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.logo{
+    color: var(--blanco);
+}
+.logo__nombre{
+    font-weight: 400;
+    margin-top: 1rem;
+}
+.logo_negrita{
+    font-family: var(--fuenteParrafos);
+    font-weight: 700;
+}
+
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap:2rem;
+        margin-top:2rem;
+    }
+}
+
+
+
+.navegacion__enlace{
+    display:block;
+    text-align: center;
+    font-size:1.8rem;
+    color: var(--blanco);
+    margin: 2rem;
+    transition: width 0.5s, height 0.5s, transform 0.5s;
+}
+
+.navegacion__enlace:hover{
+    transform : scale(2);
+    
+}
+
+
+.contenido-hero{
+    background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+    }
+
+ .header__texto p {
+     margin-top:3rem ;
+      font-size: 2rem;
+  }
+
+
+  /* main */
+
+  /* emplearemos un nuevo elemnto llamado loading----> con la clase lazi----> esto ahora se cargaran cuando el uysuario llegue a ellas  */
+
+  /* se emplea la etiqueta en html llamada picture */
+
+  /* article----> si es que nuestro contenido tiene mas contenido a un lado */
+
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 2rem;
+    margin-top:2rem;
+}
+
+/** Sobre Nosotros **/
+@media (min-width: 768px) {
+    .contenedor-principal{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 8rem;
+    }   
+}
+
+
+.entrada{
+    /* tamaño, tipo, color */
+    border-bottom:1px solid var(--gris);
+    column-gap: 4rem;
+
+}
+
+/* este pseudometodo nos permitira que en el ultimo elemento de la clase etrada es muy bueno si es que añdimos mas constantemente */
+.entrada:last-of-type{
+    border:none;
+    margin-bottom: 0;
+}
+
+
+/* ahora si a crear nyestris botoncitos  */
+
+
+/* boton general */
+.boton{
+    display: block;
+    color: var(--blanco);
+    text-align: center;
+    /* kuaqui aplica lo del inline-block */
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    /* esto es para que se separe */
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    /* este nos servira cuando tengamos al formulario ya que los inpunts tienen un borde por default */
+    border: none;
+}
+
+/* ya que este ocupa todo el espacio emplemoslo uno mas chiqutip asi es carajo, hablamos de aline-block, lo mejor de ambos mundos donde tomara el espacio que necesite pero si no sotros le metemos u padding o un margin lo haceptarara */
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block;
+    }
+    
+}
+
+
+.boton--primario{
+    background-color: var(--negro);
+
+}
+
+
+.boton--primario:hover{
+    background-color: var(--blanco);
+    color: var(--negro);
+    border: 1px solid var(--negro)
+}
+
+.boton--secundario{
+    background-color: var(--secundario);
+    
+}
+.boton--secundario:hover{
+    background-color: var(--primario);
+}
+
+.bordera{
+    background-color: var(--grisclaro);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+} 
+
+.cursos{
+    list-style: none;
+
+}
+
+/* nosotros */
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        font-size: 2rem;
+        margin-bottom: 8rem;
+    }
+    
+}
+
+
+.evento{
+    padding: 3rem 0 ;
+    border-bottom: 1px solid var(--gris);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .evento{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+    
+}
+
+.evento:last-of-type{
+    border:none;
+}
+
+.curso__label{
+
+    font-weight: 700;
+}
+.curso__info{
+    font-weight: 400;
+}
+
+.curso__label,
+.curso__info {
+    font-size: 3rem;
+}
+
+
+/* contacto */
+.contacto-bg{
+    background-image: url(../img/wow.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.formulario{
+    background-color: var(--blanco);
+    margin:-5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+    
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: center;
+    padding-right: 2rem;
+
+}
+.campo__field{
+    flex: 1;
+    border: 1px solid var(--gris)
+
+}
+/* La propiedad CSS height especifica la altura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento. */
+.campo__field--textarea {
+    height: 10rem;
+}
+
+.html{
+    background-color: black;
+}
